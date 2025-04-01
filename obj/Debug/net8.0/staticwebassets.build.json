@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "uDBT3BwcH8eC80lDiLHYVSLVnYR0vXvYnfYnf2cO3QE=",
+  "Source": "webapi.event+",
+  "BasePath": "_content/webapi.event+",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
