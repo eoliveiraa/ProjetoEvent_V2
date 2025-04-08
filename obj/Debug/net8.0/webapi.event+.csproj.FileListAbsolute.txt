@@ -353,3 +353,9 @@ C:\Users\54891245808\Desktop\ProjetoEventV2\obj\Debug\net8.0\webapi.event+.xml
 C:\Users\54891245808\Desktop\ProjetoEventV2\obj\Debug\net8.0\webapi.event+.pdb
 C:\Users\54891245808\Desktop\ProjetoEventV2\obj\Debug\net8.0\webapi.event+.genruntimeconfig.cache
 C:\Users\54891245808\Desktop\ProjetoEventV2\obj\Debug\net8.0\ref\webapi.event+.dll
+C:\Users\54891245808\Desktop\ProjetoEventV2\bin\Debug\net8.0\Azure.AI.ContentSafety.dll
+C:\Users\54891245808\Desktop\ProjetoEventV2\bin\Debug\net8.0\Microsoft.Azure.CognitiveServices.ContentModerator.dll
+C:\Users\54891245808\Desktop\ProjetoEventV2\bin\Debug\net8.0\Microsoft.Rest.ClientRuntime.dll
+C:\Users\54891245808\Desktop\ProjetoEventV2\bin\Debug\net8.0\Microsoft.Rest.ClientRuntime.Azure.dll
+C:\Users\54891245808\Desktop\ProjetoEventV2\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\54891245808\Desktop\ProjetoEventV2\obj\Debug\net8.0\webapi.event+.sourcelink.json

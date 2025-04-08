@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "webapi.event_.Controllers.ComentariosEventosController",
+    "Method": "Post",
+    "RelativePath": "api/ComentariosEventos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "comentarios",
+        "Type": "webapi.event_.Domains.ComentariosEventos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webapi.event_.Controllers.EventosController",
     "Method": "Get",
     "RelativePath": "api/Eventos",

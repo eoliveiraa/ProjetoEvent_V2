@@ -15,6 +15,37 @@
     "version": "v1"
   },
   "paths": {
+    "/api/ComentariosEventos": {
+      "post": {
+        "tags": [
+          "ComentariosEventos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComentariosEventos"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComentariosEventos"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComentariosEventos"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Eventos": {
       "get": {
         "tags": [
@@ -618,6 +649,43 @@
   },
   "components": {
     "schemas": {
+      "ComentariosEventos": {
+        "required": [
+          "descricao",
+          "exibe",
+          "idEvento",
+          "idUsuario"
+        ],
+        "type": "object",
+        "properties": {
+          "idComentarioEvento": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "descricao": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "exibe": {
+            "type": "boolean"
+          },
+          "idUsuario": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/Usuarios"
+          },
+          "idEvento": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evento": {
+            "$ref": "#/components/schemas/Eventos"
+          }
+        },
+        "additionalProperties": false
+      },
       "Eventos": {
         "required": [
           "dataEvento",
