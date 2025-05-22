@@ -1,7 +1,7 @@
 
 using Azure;
 using Azure.AI.ContentSafety;
-using Microsoft.Azure.CognitiveServices.ContentModerator;
+using Microsoft.Azure.CognitiveServices.ContentModerator;   
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -12,13 +12,19 @@ using webapi.event_.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 //Configuração do azure content safety
+//// Configuração do Azure Content Safety sem variáveis de ambiente
+//var endpoint = "https://moderatorserviceevent.cognitiveservices.azure.com/";
+//var apiKey = "FnHw36tTrvlvpe16Hal3lCitcH9g4eeKLjZU0Acs0PpIg0cM7eKqJQQJ99BEACYeBjFXJ3w3AAAHACOGmEqm";
+//var client = new ContentSafetyClient(new Uri(endpoint), new AzureKeyCredential(apiKey));
+//builder.Services.AddSingleton(client);
 
-var endpoint = builder.Configuration["AzureContentSafety:Endpoint "];
+
+var endpoint = builder.Configuration["AzureContentSafety:Endpoint"];
 var apiKey = builder.Configuration["AzureContentSafety:ApiKey"];
 
 if (string.IsNullOrEmpty(endpoint) || string.IsNullOrEmpty(apiKey))
 {
-    throw new InvalidOperationException("AzureContentSafety:Endpoint ou AzureContentSafety:ApiKey nao foram configurados");
+    throw new InvalidOperationException("Azure Content Safety: Endpoint ou API Key não foram configurados.");
 }
 
 var client = new ContentSafetyClient(new Uri(endpoint), new AzureKeyCredential(apiKey));

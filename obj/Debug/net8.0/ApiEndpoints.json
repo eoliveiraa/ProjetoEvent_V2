@@ -16,6 +16,75 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webapi.event_.Controllers.ComentariosEventosController",
+    "Method": "Get",
+    "RelativePath": "api/ComentariosEventos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "webapi.event_.Controllers.ComentariosEventosController",
+    "Method": "Delete",
+    "RelativePath": "api/ComentariosEventos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "webapi.event_.Controllers.ComentariosEventosController",
+    "Method": "GetByIdUser",
+    "RelativePath": "api/ComentariosEventos/BuscarPorIdUsuario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUsuario",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "idEvento",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "webapi.event_.Controllers.ComentariosEventosController",
+    "Method": "GetExibe",
+    "RelativePath": "api/ComentariosEventos/ListarSomenteExibe",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webapi.event_.Controllers.EventosController",
     "Method": "Get",
     "RelativePath": "api/Eventos",
