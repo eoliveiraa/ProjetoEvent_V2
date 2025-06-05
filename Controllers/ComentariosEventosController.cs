@@ -2,6 +2,7 @@
 using Azure.AI.ContentSafety;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using webapi.event_.Contexts;
 using webapi.event_.Domains;
 using webapi.event_.Interfaces;
 
@@ -15,10 +16,12 @@ namespace webapi.event_.Controllers
         private readonly IComentariosEventosRepository _comentariosEventosRepository;
 
         private readonly ContentSafetyClient _contentSafetyClient;
-        public ComentariosEventosController(ContentSafetyClient contentSafetyClient, IComentariosEventosRepository comentariosEventosRepository)
+        private readonly Context _contexto;
+        public ComentariosEventosController(ContentSafetyClient contentSafetyClient, IComentariosEventosRepository comentariosEventosRepository, Context contexto)
         {
             _comentariosEventosRepository = comentariosEventosRepository;
             _contentSafetyClient = contentSafetyClient;
+            _contexto = contexto;
         }
 
         [HttpPost]
@@ -26,6 +29,16 @@ namespace webapi.event_.Controllers
         {
             try
             {
+                Eventos eventoBuscado = _contexto.Eventos.FirstOrDefault(e => e.IdEvento == comentarios.IdEvento);
+
+                if (eventoBuscado == null ) {
+                    return NotFound("Evento nao encontrado");
+                }
+                if (eventoBuscado.DataEvento >= DateTime.UtcNow)
+                {
+                    return BadRequest("Nao e possivel comentar um evento que ainda nao aconteceu");
+                }
+
                 if (string.IsNullOrEmpty(comentarios.Descricao))
                 {
                     return BadRequest("O texto a ser moderado nao pode estar vazio!");
