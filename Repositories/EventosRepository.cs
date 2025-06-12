@@ -142,6 +142,7 @@ namespace webapi.event_.Repositories
             {
                 return _context.Eventos
                     .Include(e => e.PresencasEventos)
+                    .Where(e => e.PresencasEventos!.Any(p => p.IdUsuario == id && p.Situacao == true))
                     .Select(e => new Eventos
                     {
                         IdEvento = e.IdEvento,
@@ -160,13 +161,11 @@ namespace webapi.event_.Repositories
                             IdInstituicao = e.IdInstituicao,
                             NomeFantasia = e.Instituicao!.NomeFantasia
                         },
-                        PresencasEventos = new PresencasEventos
-                        {
-                            IdUsuario = e.PresencasEventos!.IdUsuario,
-                            Situacao = e.PresencasEventos!.Situacao
-                        }
+                        // Aqui você monta uma lista com as presenças válidas (opcional)
+                        PresencasEventos = e.PresencasEventos
+                            .Where(p => p.IdUsuario == id && p.Situacao == true)
+                            .ToList()
                     })
-                    .Where(e => e.PresencasEventos!.Situacao == true && e.PresencasEventos.IdUsuario == id)
                     .ToList();
             }
             catch (Exception)

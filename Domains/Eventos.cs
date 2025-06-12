@@ -33,6 +33,6 @@ namespace webapi.event_.Domains
         [ForeignKey("IdInstituicao")]
         public Instituicoes? Instituicao { get; set; }
 
-        public PresencasEventos? PresencasEventos { get; set; }
+        public ICollection<PresencasEventos>? PresencasEventos { get; set; }
     }
 }

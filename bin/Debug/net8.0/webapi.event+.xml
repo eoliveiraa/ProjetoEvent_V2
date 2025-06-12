@@ -28,5 +28,17 @@
         <member name="M:webapi.event_.Migrations.DbEventPlus.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:webapi.event_.Migrations.bd_EventV2">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.Migrations.bd_EventV2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.Migrations.bd_EventV2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.Migrations.bd_EventV2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>

@@ -820,7 +820,11 @@
             "$ref": "#/components/schemas/Instituicoes"
           },
           "presencasEventos": {
-            "$ref": "#/components/schemas/PresencasEventos"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PresencasEventos"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
