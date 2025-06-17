@@ -36,7 +36,7 @@ namespace webapi.event_.Controllers
                 }
                 if (eventoBuscado.DataEvento >= DateTime.UtcNow)
                 {
-                    return BadRequest("Nao e possivel comentar um evento que ainda nao aconteceu");
+                    return BadRequest("Não é possível comentar um evento que ainda não aconteceu");
                 }
 
                 if (string.IsNullOrEmpty(comentarios.Descricao))
